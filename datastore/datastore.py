@@ -50,9 +50,6 @@ class DataStore():
 
         Raises:
             DuplicateRecord: If record already exists and overwrite is False.
-
-        Example:
-          
         '''
         if not overwrite and self._destination.exists(identifier):
             raise errors.DuplicateRecord(f'Record {identifier} already exists')
