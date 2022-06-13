@@ -53,7 +53,7 @@ store: Store a record to storage destination
 retrieve: Retrieve a record from storage destination
 delete: Delete a record from storage destination
 exists: Check if a record exists in storage destination
-retrieve_all: Retrieve all records from storage destination
+retrieve_all: Retrieve all records from storage destination one by one
 ```
 Format and destination handlers are derived from their abstract class and implements the required interface.
 ```
