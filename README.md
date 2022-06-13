@@ -55,7 +55,7 @@ delete: Delete a record from storage destination
 exists: Check if a record exists in storage destination
 retrieve_all: Retrieve all records from storage destination
 ```
-All format and destination handlers are derived from their abstract class and implements the required interface.
+Format and destination handlers are derived from their abstract class and implements the required interface.
 ```
 # JSON format handler
 datastore.formats.JSON
@@ -63,7 +63,7 @@ datastore.formats.JSON
 # Local drive destination handler
 datastore.destinations.LocalDrive
 ```
-Data store core is also implemented as a class that expects format/destination names and configurations on instantiation. Because of standard interface of format and destination handlers, new handlers can be added to the library without changing data store class code.
+Data store is also implemented as a class that expects format & destination name and configuration on instantiation. Because of standard interface of format and destination handlers, new handlers can be added to the library without changing data store class code.
 ```
 # Data store class
 datastore.datastore.DataStore
@@ -74,7 +74,7 @@ insert_many: Insert multiple records
 find: Retrieve a record
 update: Update a record
 delete: Delete a record
-query: Retrieve records matching query filter
+query: Retrieve records using query filter
 ```
 List of supported format and destination handlers can be fetched using provided helper function.
 ```py
@@ -112,7 +112,7 @@ print(data)
     }
 }
 ```
-Custom errors/exceptions are defined in *errors* module.
+Custom exceptions are defined in *errors* module.
 ```
 # Custom exceptions
 datastore.datastore.errors
@@ -226,7 +226,6 @@ Found 4 matches
 Deleting record 860bea8e04044122a2bc961283f32035
 
 Doing cleanup
-
 ```
 
 Unit tests execution log
@@ -298,7 +297,7 @@ OK
 
 # Extension
 
-Note: No code change should be required in data-store class for supporting new format or destination handlers.
+Note: No code change should be required in data store class for supporting new format or destination handlers.
 
 ## Add a new format handler
 - Create a class derived from format handler abstract class (datastore.formats.FormatBase).
