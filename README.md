@@ -30,6 +30,20 @@ Python
 Packages
 - As per the requirement of storage format and destination handlers. (No extra package is required for current implementation).
 
+# Source Code
+```
+datastore/                              # Data store library
+    __init__.py
+    datastore.py                        # Interface of data-store library
+    errors.py                           # Custom exceptions
+    destinations.py                     # Destination handlers implementation
+    formats.py                          # Format handlers implementation
+tests/
+    test_datastore_json_localdrive.py   # Unit tests for json-localdrive pair
+    test_destination_localdrive.py      # Unit tests for localdrive destination handler
+    test_format_json.py                 # Unit tests for json format handler
+demo.py                                 # Demonstration app
+```
 
 # Implementation Details
 
@@ -122,20 +136,11 @@ DataStoreError: Exceptions for all errors from the library
 StorageFormatError: Exception for all storage format related errors, derived from DataStoreError
 StorageDestinationError: Exception for all storage destination related errors, derived from DataStoreError
 ```
-
-# Source Code
+Record that can be stored using the library must have an identifier (ID) and data.
 ```
-datastore/                              # Data store library
-    __init__.py
-    datastore.py                        # Interface of data-store library
-    errors.py                           # Custom exceptions
-    destinations.py                     # Destination handlers implementation
-    formats.py                          # Format handlers implementation
-tests/
-    test_datastore_json_localdrive.py   # Unit tests for json-localdrive pair
-    test_destination_localdrive.py      # Unit tests for localdrive destination handler
-    test_format_json.py                 # Unit tests for json format handler
-demo.py                                 # Demonstration app
+# Attributes of a record
+identifier: Record ID (string)
+data: Key value pairs (map)
 ```
 
 # Usage
